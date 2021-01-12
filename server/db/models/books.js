@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 
-const Listings = db.define('listings', {
+const Books = db.define('book', {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
@@ -31,4 +31,4 @@ const Listings = db.define('listings', {
   }
 })
 
-module.exports = Listings
+module.exports = Books
