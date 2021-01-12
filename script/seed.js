@@ -60,7 +60,7 @@ const books = [
     description:
       'The Lord of the Rings tells of the great quest undertaken by Frodo and the Fellowship of the Ring: Gandalf the Wizard; the hobbits Merry, Pippin, and Sam; Gimli the Dwarf; Legolas the Elf; Boromir of Gondor; and a tall, mysterious stranger called Strider.',
     genre: 'Epic Fantasy',
-    price: 14.99,
+    price: 9.99,
     image:
       'https://kbimages1-a.akamaihd.net/dd36e70a-9657-48c0-bcb7-6333aecb4394/353/569/90/False/the-lord-of-the-rings-1.jpg'
   },
