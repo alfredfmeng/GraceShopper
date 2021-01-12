@@ -30,3 +30,5 @@ const Listings = db.define('listings', {
       'https://dynamicmediainstitute.org/wp-content/themes/dynamic-media-institute/imagery/default-thesis-abstract.png'
   }
 })
+
+module.exports = Listings
