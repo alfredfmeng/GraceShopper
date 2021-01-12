@@ -11,19 +11,18 @@ class AllBooks extends React.Component {
   }
 
   async componentDidMount() {
-    // Placeholder code until backend is set up
-    // try {
-    //   const {data: books} = await axios.get('/api/books')
-    //   this.setState({books})
-    // } catch (err) {
-    //   console.log(err)
-    // }
+    try {
+      const {data: books} = await axios.get('/api/books')
+      this.setState({books})
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   render() {
     return (
       <div>
-        {/* {this.state.books.map((book) => {
+        {this.state.books.map(book => {
           return (
             <SingleBook
               key={book.id}
@@ -34,7 +33,7 @@ class AllBooks extends React.Component {
               image={book.image}
             />
           )
-        })} */}
+        })}
       </div>
     )
   }
