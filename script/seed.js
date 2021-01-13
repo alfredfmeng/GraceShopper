@@ -105,14 +105,28 @@ const books = [
       'https://kbimages1-a.akamaihd.net/4e8749d6-49ef-4d10-a101-5bc8661b9dca/353/569/90/False/a-promised-land-2.jpg'
   }
 ]
+const users = [
+  {
+    name: 'Cody',
+    email: 'cody@email.com',
+    password: '123',
+    admin: false
+  },
+  {
+    name: 'Murphy',
+    email: 'murphy@email.com',
+    password: '123',
+    admin: true
+  }
+]
 
 async function seed() {
   await db.sync({force: true})
   console.log('db synced!')
 
-  const users = await Promise.all([
-    User.create({email: 'cody@email.com', password: '123'}),
-    User.create({email: 'murphy@email.com', password: '123'})
+  const seedUsers = await Promise.all([
+    User.create(users[0]),
+    User.create(users[1])
   ])
 
   const seedBooks = await Promise.all([
@@ -128,7 +142,7 @@ async function seed() {
     Books.create(books[9])
   ])
 
-  console.log(`seeded ${users.length} users`)
+  console.log(`seeded ${seedUsers.length} users`)
   console.log(`seeded ${seedBooks.length} books`)
   console.log(`seeded successfully`)
 }
