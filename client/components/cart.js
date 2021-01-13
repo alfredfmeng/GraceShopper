@@ -6,7 +6,7 @@ export class Cart extends React.Component {
   constructor() {
     super();
     this.state = {
-      ids: [2, 3],
+      cart: [],
       books: []
     };
   }
@@ -14,8 +14,8 @@ export class Cart extends React.Component {
   async componentDidMount() {
     try {
       let res = { ...this.state };
-      for (let i = 0; i < this.state.ids.length; i++) {
-        const response = await axios.get(`/api/books/${this.state.ids[i]}`);
+      for (let i = 0; i < this.state.cart.length; i++) {
+        const response = await axios.get(`/api/books/${this.state.cart[i].id}`);
         res.books.push(response.data);
       }
       this.setState(res);
@@ -29,16 +29,20 @@ export class Cart extends React.Component {
     return (
       <div>
         <h1>Your Cart</h1>
-        {this.state.books.map(book => (
-          <SingleBook
-            key={book.id}
-            title={book.title}
-            author={book.author}
-            description={book.description}
-            genre={book.genre}
-            image={book.image}
-          />
-        ))}
+        {this.state.books.length === 0 ? (
+          <h2>Your cart is empty!</h2>
+        ) : (
+          this.state.books.map(book => (
+            <SingleBook
+              key={book.id}
+              title={book.title}
+              author={book.author}
+              description={book.description}
+              genre={book.genre}
+              image={book.image}
+            />
+          ))
+        )}
       </div>
     );
   }
