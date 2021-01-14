@@ -4,24 +4,31 @@ import {fetchSingleBook} from '../store/books'
 
 class SingleBookView extends React.Component {
   componentDidMount() {
-    this.props.fetchSingleBook(this.props.match.params.id)
+    try {
+      this.props.fetchSingleBook(this.props.match.params.id)
+      // console.log(this.props.fetchSingleBook(this.props.match.params.id))
+    } catch (err) {
+      console.log(err)
+    }
   }
   render() {
-    //const {book} = this.props
-    console.log(this.props)
-    return <h1>Hello</h1>
-    // return (
-    //   <div>
-    //     <h1>{book.title}</h1>
-    //     <div>
-    //       <img src={book.imagine} alt={`Image of ${book.title}`} />
-    //     </div>
-    //   </div>
-    // )
+    console.log('CONSOLELOG 1', this.props.book)
+    // return <h1>hello world</h1>
+    const {book} = this.props
+    console.log('THIS.PROPS', this.props)
+    console.log('THIS.PROPS.STATE', this.props.state)
+    return (
+      <div>
+        <h1>{book.title}</h1>
+        <div>
+          <img src={book.image} alt={`Image of ${book.title}`} />
+        </div>
+      </div>
+    )
   }
 }
 const mapStateToProps = state => ({
-  book: state.book
+  book: state.books
 })
 const mapDispatchToProps = dispatch => ({
   fetchSingleBook: id => dispatch(fetchSingleBook(id))
