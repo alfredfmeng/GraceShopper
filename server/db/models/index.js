@@ -1,5 +1,8 @@
-const User = require('./user')
-const Books = require('./books')
+const Sequelize = require("sequelize");
+const db = require("../db");
+const User = require("./user");
+const Book = require("./books");
+const Order = require("./order");
 
 /**
  * If we had any associations to make, this would be a great place to put them!
@@ -7,6 +10,31 @@ const Books = require('./books')
  *
  *    BlogPost.belongsTo(User)
  */
+
+User.hasMany(Order, {
+  foreignKey: "user"
+});
+Order.belongsTo(User);
+
+const bookOrders = db.define("book_order", {
+  bookId: {
+    type: Sequelize.INTEGER,
+    references: {
+      model: Book,
+      key: "id"
+    }
+  },
+  orderId: {
+    type: Sequelize.INTEGER,
+    references: {
+      model: Order,
+      key: "id"
+    }
+  }
+});
+
+Book.belongsToMany(Order, { through: bookOrders });
+Order.belongsToMany(Book, { through: bookOrders });
 
 /**
  * We'll export all of our models here, so that any time a module needs a model,
@@ -16,5 +44,7 @@ const Books = require('./books')
  */
 module.exports = {
   User,
-  Books
-}
+  Book,
+  Order,
+  bookOrders
+};
