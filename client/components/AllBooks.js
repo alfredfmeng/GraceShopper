@@ -1,28 +1,17 @@
 import React from 'react'
 import SingleBook from './SingleBook'
-import axios from 'axios'
+import {connect} from 'react-redux'
+import {fetchBooks} from '../store/books'
 
 class AllBooks extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      books: []
-    }
-  }
-
-  async componentDidMount() {
-    try {
-      const {data: books} = await axios.get('/api/books')
-      this.setState({books})
-    } catch (err) {
-      console.log(err)
-    }
+  componentDidMount() {
+    this.props.fetchBooks()
   }
 
   render() {
     return (
       <div>
-        {this.state.books.map(book => {
+        {this.props.books.map(book => {
           return (
             <SingleBook
               key={book.id}
@@ -39,4 +28,16 @@ class AllBooks extends React.Component {
   }
 }
 
-export default AllBooks
+const mapStateToProps = state => {
+  return {
+    books: state.books
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchBooks: () => dispatch(fetchBooks())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AllBooks)
