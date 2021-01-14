@@ -24,7 +24,7 @@ class SingleBookView extends React.Component {
           <div>
             <h3>{book.description}</h3>
           </div>
-          <div>{book.genre}</div>
+          <div>{book.price}</div>
         </div>
       </div>
     )

@@ -23,6 +23,10 @@ const Books = db.define('book', {
     type: Sequelize.STRING,
     allowNull: false
   },
+  price: {
+    type: Sequelize.FLOAT,
+    allowNull: false
+  },
   image: {
     type: Sequelize.TEXT,
     allowNull: false,
