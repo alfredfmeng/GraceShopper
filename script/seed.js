@@ -227,7 +227,7 @@ async function seed() {
     Books.create(books[8]),
     Books.create(books[9]),
     Books.create(books[10]),
-    Books.create(books[1]),
+    Books.create(books[11]),
     Books.create(books[12]),
     Books.create(books[13]),
     Books.create(books[14]),
