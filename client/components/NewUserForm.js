@@ -1,7 +1,6 @@
 import React from 'react'
 
 const NewUserForm = props => {
-  console.log(props)
   return (
     <div>
       <h1>Create A New Account</h1>
