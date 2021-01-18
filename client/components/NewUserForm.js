@@ -1,6 +1,7 @@
 import React from 'react'
 
 const NewUserForm = props => {
+  console.log(props)
   return (
     <div>
       <h1>Create A New Account</h1>
@@ -13,34 +14,20 @@ const NewUserForm = props => {
           value={props.name}
         />
 
-        <label htmlFor="imageUrl">Enter Image URL:</label>
+        <label htmlFor="email">Enter Email:</label>
         <input
           type="text"
-          name="imageUrl"
+          name="email"
           onChange={props.handleChange}
-          value={props.imageUrl}
+          value={props.email}
         />
 
-        <label htmlFor="fuelType">Fuel Type:</label>
-        <select
-          name="fuelType"
-          onChange={props.handleChange}
-          value={props.fuelType}
-        >
-          <option value="">--Please choose a fuel type--</option>
-          <option value="gas">Gas</option>
-          <option value="diesel">Diesel</option>
-          <option value="electric">Electric</option>
-        </select>
-
-        <label htmlFor="fuelLevel">Fuel Level (0-100):</label>
+        <label htmlFor="password">Enter Password:</label>
         <input
-          type="number"
-          name="fuelLevel"
-          min="0"
-          max="100"
+          type="text"
+          name="password"
           onChange={props.handleChange}
-          value={props.fuelLevel}
+          value={props.password}
         />
 
         <button type="submit">Submit</button>
