@@ -3,6 +3,39 @@
 const db = require('../server/db')
 const {User, Books} = require('../server/db/models')
 
+const users = [
+  {
+    name: 'Alfred',
+    admin: true,
+    email: 'alfred@email.com',
+    password: '12345'
+  },
+  {
+    name: 'Ethan',
+    admin: true,
+    email: 'ethan@email.com',
+    password: '12345'
+  },
+  {
+    name: 'James',
+    admin: true,
+    email: 'james@email.com',
+    password: '12345'
+  },
+  {
+    name: 'Juan',
+    admin: true,
+    email: 'juan@email.com',
+    password: '12345'
+  },
+  {
+    name: 'Test',
+    admin: false,
+    email: 'test@email.com',
+    password: '12345'
+  }
+]
+
 const books = [
   {
     title: 'The Last Wish',
@@ -210,9 +243,12 @@ async function seed() {
   await db.sync({force: true})
   console.log('db synced!')
 
-  const users = await Promise.all([
-    // User.create({email: 'cody@email.com', password: '123'}),
-    // User.create({email: 'murphy@email.com', password: '123'})
+  const seedUsers = await Promise.all([
+    User.create(users[0]),
+    User.create(users[1]),
+    User.create(users[2]),
+    User.create(users[3]),
+    User.create(users[4])
   ])
 
   const seedBooks = await Promise.all([
@@ -238,7 +274,7 @@ async function seed() {
     Books.create(books[19])
   ])
 
-  console.log(`seeded ${users.length} users`)
+  console.log(`seeded ${seedUsers.length} users`)
   console.log(`seeded ${seedBooks.length} books`)
   console.log(`seeded successfully`)
 }
