@@ -26,7 +26,7 @@ class AllBooks extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    history.push('/')
+    this.props.history.push('/')
     try {
       this.props.createUser({...this.state})
     } catch (err) {
