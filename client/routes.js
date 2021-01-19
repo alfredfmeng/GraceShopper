@@ -7,6 +7,7 @@ import {me} from './store'
 import AllBooks from './components/AllBooks'
 import SingleBookView from './components/SingleBookView'
 import {Cart} from './components/cart'
+import Admin from './components/admin'
 
 /**
  * COMPONENT
@@ -26,6 +27,7 @@ class Routes extends Component {
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route path="/cart" component={Cart} />
+
           {isLoggedIn && (
             <Switch>
               {/* Routes placed here are only available after logging in */}
@@ -37,6 +39,7 @@ class Routes extends Component {
         </Switch>
         <Route exact path="/" component={AllBooks} />
         <Route path="/books/:id" component={SingleBookView} />
+        <Route path="/admin" component={Admin} />
       </div>
     )
   }
