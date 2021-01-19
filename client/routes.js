@@ -19,7 +19,7 @@ class Routes extends Component {
   }
 
   render() {
-    const {isLoggedIn} = this.props
+    const {isLoggedIn, isAdmin} = this.props
 
     return (
       <div>
@@ -28,6 +28,8 @@ class Routes extends Component {
           <Route path="/login" component={Login} />
           <Route path="/signup" component={NewUserForm} />
           <Route path="/cart" component={Cart} />
+          <Route exact path="/" component={AllBooks} />
+          <Route path="/books/:id" component={SingleBookView} />
 
           {isLoggedIn && (
             <Switch>
@@ -35,12 +37,17 @@ class Routes extends Component {
               <Route path="/home" component={UserHome} />
             </Switch>
           )}
+
           {/* Displays our Login component as a fallback */}
           <Route component={Login} />
+          {isLoggedIn &&
+            isAdmin && (
+              <Switch>
+                {/* Routes placed here are only available after logging in */}
+                <Route path="/admin" component={Admin} />
+              </Switch>
+            )}
         </Switch>
-        <Route exact path="/" component={AllBooks} />
-        <Route path="/books/:id" component={SingleBookView} />
-        <Route path="/admin" component={Admin} />
       </div>
     )
   }
@@ -53,7 +60,8 @@ const mapState = state => {
   return {
     // Being 'logged in' for our purposes will be defined has having a state.user that has a truthy id.
     // Otherwise, state.user will be an empty object, and state.user.id will be falsey
-    isLoggedIn: !!state.user.id
+    isLoggedIn: !!state.user.id,
+    isAdmin: state.user.admin
   }
 }
 
