@@ -23,11 +23,14 @@ const Books = db.define('book', {
     type: Sequelize.STRING,
     allowNull: false
   },
+  price: {
+    type: Sequelize.FLOAT,
+    allowNull: false
+  },
   image: {
     type: Sequelize.TEXT,
-    allowNull: false,
     defaultValue:
-      'https://dynamicmediainstitute.org/wp-content/themes/dynamic-media-institute/imagery/default-thesis-abstract.png'
+      'https://kbimages1-a.akamaihd.net/Images/0/353/569/90/False/empty_book_cover.jpg'
   }
 })
 

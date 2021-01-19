@@ -19,3 +19,12 @@ router.get('/:id', async (req, res, next) => {
     next(error)
   }
 })
+
+router.post('/', async (req, res, next) => {
+  try {
+    const book = await Books.create(req.body)
+    res.json(book)
+  } catch (error) {
+    next(error)
+  }
+})
