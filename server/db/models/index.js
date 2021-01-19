@@ -12,7 +12,7 @@ const Order = require('./order')
  */
 
 User.hasMany(Order, {
-  foreignKey: 'userId'
+  foreignKey: 'users'
 })
 Order.belongsTo(User)
 

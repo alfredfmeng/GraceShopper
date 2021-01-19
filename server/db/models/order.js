@@ -7,7 +7,7 @@ const Order = db.define('order', {
     primaryKey: true,
     autoIncrement: true
   },
-  usersId: {
+  users: {
     type: Sequelize.STRING,
     allowNull: false
   },
