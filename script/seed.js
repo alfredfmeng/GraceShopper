@@ -1,7 +1,7 @@
 'use strict'
 
 const db = require('../server/db')
-const {User, Books} = require('../server/db/models')
+const {User, Book} = require('../server/db/models')
 
 const users = [
   {
@@ -252,26 +252,26 @@ async function seed() {
   ])
 
   const seedBooks = await Promise.all([
-    Books.create(books[0]),
-    Books.create(books[1]),
-    Books.create(books[2]),
-    Books.create(books[3]),
-    Books.create(books[4]),
-    Books.create(books[5]),
-    Books.create(books[6]),
-    Books.create(books[7]),
-    Books.create(books[8]),
-    Books.create(books[9]),
-    Books.create(books[10]),
-    Books.create(books[11]),
-    Books.create(books[12]),
-    Books.create(books[13]),
-    Books.create(books[14]),
-    Books.create(books[15]),
-    Books.create(books[16]),
-    Books.create(books[17]),
-    Books.create(books[18]),
-    Books.create(books[19])
+    Book.create(books[0]),
+    Book.create(books[1]),
+    Book.create(books[2]),
+    Book.create(books[3]),
+    Book.create(books[4]),
+    Book.create(books[5]),
+    Book.create(books[6]),
+    Book.create(books[7]),
+    Book.create(books[8]),
+    Book.create(books[9]),
+    Book.create(books[10]),
+    Book.create(books[11]),
+    Book.create(books[12]),
+    Book.create(books[13]),
+    Book.create(books[14]),
+    Book.create(books[15]),
+    Book.create(books[16]),
+    Book.create(books[17]),
+    Book.create(books[18]),
+    Book.create(books[19])
   ])
 
   console.log(`seeded ${seedUsers.length} users`)

@@ -1,10 +1,10 @@
 const router = require('express').Router()
-const {Books} = require('../db/models')
+const {Book} = require('../db/models')
 module.exports = router
 
 router.get('/', async (req, res, next) => {
   try {
-    const books = await Books.findAll()
+    const books = await Book.findAll()
     res.json(books)
   } catch (err) {
     next(err)
@@ -13,7 +13,7 @@ router.get('/', async (req, res, next) => {
 
 router.get('/:id', async (req, res, next) => {
   try {
-    const book = await Books.findByPk(req.params.id)
+    const book = await Book.findByPk(req.params.id)
     res.json(book)
   } catch (error) {
     next(error)
@@ -22,7 +22,7 @@ router.get('/:id', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
   try {
-    const book = await Books.create(req.body)
+    const book = await Book.create(req.body)
     res.json(book)
   } catch (error) {
     next(error)
