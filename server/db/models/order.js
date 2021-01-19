@@ -7,12 +7,8 @@ const Order = db.define('order', {
     primaryKey: true,
     autoIncrement: true
   },
-  user: {
-    type: Sequelize.STRING,
-    allowNull: false
-  },
-  items: {
-    type: Sequelize.ARRAY(Sequelize.JSON),
+  userID: {
+    type: Sequelize.INTEGER,
     allowNull: false
   }
 })
