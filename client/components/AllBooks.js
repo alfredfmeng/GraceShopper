@@ -1,6 +1,5 @@
 import React from 'react'
 import SearchByTitle from './SearchByTitle'
-import NewUserForm from './NewUserForm'
 import {connect} from 'react-redux'
 import {newUser} from '../store/newUser'
 
