@@ -12,7 +12,6 @@ class SingleBookView extends React.Component {
   }
   render() {
     const {book} = this.props
-    console.log(book)
     return (
       <div className="singleBookView">
         <div className="bookImage">
