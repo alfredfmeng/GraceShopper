@@ -15,6 +15,7 @@ class AllBooks extends React.Component {
           return (
             <SingleBook
               key={book.id}
+              id={book.id}
               title={book.title}
               author={book.author}
               description={book.description}

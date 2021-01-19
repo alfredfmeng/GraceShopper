@@ -24,9 +24,25 @@ class SingleBookView extends React.Component {
             <h3>{book.description}</h3>
           </div>
           <div>{book.price}</div>
+          <button
+            type="button"
+            onClick={() => {
+              let cart = []
+              const storage = localStorage.getItem('cart')
+              if (storage) cart = JSON.parse(localStorage.getItem('cart'))
+              if (storage && storage.includes(`"id":${book.id}`)) {
+                console.log('Error - item already in cart!')
+              } else {
+                cart.push({id: book.id, qty: 1})
+                localStorage.setItem('cart', JSON.stringify(cart))
+              }
+            }}
+          >
+            Add to cart
+          </button>
         </div>
       </div>
-    )
+    ) // qty is dummy val - add form later
   }
 }
 const mapStateToProps = state => ({

@@ -13,6 +13,7 @@ export class Cart extends React.Component {
 
   async componentDidMount() {
     try {
+      this.state.cart = JSON.parse(localStorage.getItem('cart'))
       let res = {...this.state}
       for (let i = 0; i < this.state.cart.length; i++) {
         const response = await axios.get(`/api/books/${this.state.cart[i].id}`)
