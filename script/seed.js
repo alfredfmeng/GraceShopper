@@ -110,13 +110,61 @@ const users = [
     name: 'Cody',
     email: 'cody@email.com',
     password: '123',
+    admin: true
+  },
+  {
+    name: 'Murphy',
+    email: 'murphy@email.com',
+    password: '123',
     admin: false
   },
   {
     name: 'Murphy',
     email: 'murphy@email.com',
     password: '123',
-    admin: true
+    admin: false
+  },
+  {
+    name: 'Murphy',
+    email: 'murphy@email.com',
+    password: '123',
+    admin: false
+  },
+  {
+    name: 'Murphy',
+    email: 'murphy@email.com',
+    password: '123',
+    admin: false
+  },
+  {
+    name: 'Murphy',
+    email: 'murphy@email.com',
+    password: '123',
+    admin: false
+  },
+  {
+    name: 'Murphy',
+    email: 'murphy@email.com',
+    password: '123',
+    admin: false
+  },
+  {
+    name: 'Murphy',
+    email: 'murphy@email.com',
+    password: '123',
+    admin: false
+  },
+  {
+    name: 'Murphy',
+    email: 'murphy@email.com',
+    password: '123',
+    admin: false
+  },
+  {
+    name: 'Murphy',
+    email: 'murphy@email.com',
+    password: '123',
+    admin: false
   }
 ]
 
