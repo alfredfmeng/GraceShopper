@@ -6,7 +6,9 @@ import {logout} from '../store'
 
 const Navbar = ({handleClick, isLoggedIn}) => (
   <div>
-    <h1>Website Name</h1>
+    <Link to="/" style={{color: '#000000'}}>
+      <h1>Fullstack's Bookstacks</h1>
+    </Link>
     <nav>
       {isLoggedIn ? (
         <div>

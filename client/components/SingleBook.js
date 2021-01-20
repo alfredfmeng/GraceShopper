@@ -1,11 +1,17 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link, Redirect, useHistory} from 'react-router-dom'
+import {destroyBooks, fetchBooks} from '../store/books'
 
 class SingleBook extends React.Component {
   // handleClick = (bookId) => {
   //   this.props.history.push(`/books/${bookId}`)
   // }
+
+  handleRemoveBook = async bookId => {
+    await this.props.deleteBook(bookId)
+    this.props.fetchBook()
+  }
 
   render() {
     const {isAdmin} = this.props
@@ -13,11 +19,20 @@ class SingleBook extends React.Component {
       <div>
         {isAdmin ? (
           <div>
-            <img src={this.props.image} />
+            <Link to={`/books/${this.props.id}`}>
+              <img src={this.props.image} />
+            </Link>
             <h1>{this.props.title}</h1>
             <h2>{this.props.author}</h2>
             <h2>{this.props.price}</h2>
-            <button type="button">Delete</button>
+            <button
+              type="button"
+              onClick={() => {
+                this.handleRemoveBook(this.props.id)
+              }}
+            >
+              Delete
+            </button>
             <button type="button">Edit Price</button>
           </div>
         ) : (
@@ -28,6 +43,7 @@ class SingleBook extends React.Component {
             <h1>{this.props.title}</h1>
             <h2>{this.props.author}</h2>
             <h2>{this.props.price}</h2>
+            <button type="button">Add To Cart</button>
           </div>
         )}
       </div>
@@ -42,4 +58,13 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, null)(SingleBook)
+const mapDispatchToProps = dispatch => {
+  return {
+    deleteBook: key => {
+      dispatch(destroyBooks(key))
+    },
+    fetchBook: () => dispatch(fetchBooks())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SingleBook)
