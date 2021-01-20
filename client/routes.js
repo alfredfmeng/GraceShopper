@@ -9,6 +9,7 @@ import SingleBookView from './components/SingleBookView'
 import {Cart} from './components/cart'
 import Admin from './components/admin'
 import NewUserForm from './components/NewUserForm'
+import {Checkout} from './components/checkout'
 
 /**
  * COMPONENT
@@ -30,6 +31,7 @@ class Routes extends Component {
           <Route path="/cart" component={Cart} />
           <Route exact path="/" component={AllBooks} />
           <Route path="/books/:id" component={SingleBookView} />
+          <Route path="/checkout" component={Checkout} />
 
           {isLoggedIn && (
             <Switch>
