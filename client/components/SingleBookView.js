@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {fetchSingleBook} from '../store/books'
+import {fetchSingleBook} from '../store/book'
 
 class SingleBookView extends React.Component {
   componentDidMount() {

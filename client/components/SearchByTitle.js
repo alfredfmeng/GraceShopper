@@ -24,7 +24,6 @@ class SearchByTitle extends React.Component {
 
   renderBook = book => {
     const {search} = this.state
-    // var title = book.title.toLowerCase()
 
     if (
       search !== '' &&
@@ -49,14 +48,10 @@ class SearchByTitle extends React.Component {
 
   render() {
     const {search} = this.state
-    const filteredBooks = this.props.books.filter(book => {
-      // this.setState({filter: ''})
-      return book.title.toLowerCase().indexOf(search.toLowerCase()) !== -1
-    })
 
     return (
       <div>
-        {this.state.search === '' ? (
+        {this.props.books && this.state.search === '' ? (
           <div>
             <div className="col">
               <span>Search Book</span>
@@ -71,9 +66,16 @@ class SearchByTitle extends React.Component {
               <input label="Search Book" onChange={this.handleOnChange} />
             </div>
             <div className="row">
-              {filteredBooks.map(book => {
-                return this.renderBook(book)
-              })}
+              {this.props.books
+                .filter(book => {
+                  return (
+                    book.title.toLowerCase().indexOf(search.toLowerCase()) !==
+                    -1
+                  )
+                })
+                .map(book => {
+                  return this.renderBook(book)
+                })}
             </div>
           </div>
         )}
