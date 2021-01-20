@@ -27,7 +27,6 @@ class SingleBookView extends React.Component {
           <form
             onSubmit={() => {
               let cart = []
-              console.log(document.getElementById('quantity'))
               const storage = localStorage.getItem('cart')
               if (storage) cart = JSON.parse(localStorage.getItem('cart'))
               if (storage && storage.includes(`"id":${book.id}`)) {
