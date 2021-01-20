@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {fetchSingleBook} from '../store/book'
+import {AddSingleBook} from '../store/cart'
 
 class SingleBookView extends React.Component {
   componentDidMount() {
@@ -11,6 +12,7 @@ class SingleBookView extends React.Component {
     }
   }
   render() {
+    console.log(this.state)
     const {book} = this.props
     return (
       <div className="singleBookView">
@@ -24,31 +26,44 @@ class SingleBookView extends React.Component {
             <h3>{book.description}</h3>
           </div>
           <div>{book.price}</div>
-          <button
-            type="button"
-            onClick={() => {
+          <form
+            onSubmit={e => {
+              e.preventDefault()
               let cart = []
               const storage = localStorage.getItem('cart')
               if (storage) cart = JSON.parse(localStorage.getItem('cart'))
               if (storage && storage.includes(`"id":${book.id}`)) {
                 console.log('Error - item already in cart!')
               } else {
-                cart.push({id: book.id, qty: 1})
+                this.props.AddSingleBook(
+                  book.id,
+                  document.getElementById('quantity').value
+                )
+                console.log(this.props)
+                cart.push({
+                  id: book.id,
+                  qty: document.getElementById('quantity').value
+                })
                 localStorage.setItem('cart', JSON.stringify(cart))
               }
             }}
           >
-            Add to cart
-          </button>
+            <label>
+              Quantity:
+              <input type="number" id="quantity" min="1" defaultValue="1" />
+            </label>
+            <input type="submit" value="Add to cart" />
+          </form>
         </div>
       </div>
-    ) // qty is dummy val - add form later
+    )
   }
 }
 const mapStateToProps = state => ({
   book: state.book
 })
 const mapDispatchToProps = dispatch => ({
-  fetchSingleBook: id => dispatch(fetchSingleBook(id))
+  fetchSingleBook: id => dispatch(fetchSingleBook(id)),
+  AddSingleBook: (id, qty) => dispatch(AddSingleBook(id, qty))
 })
 export default connect(mapStateToProps, mapDispatchToProps)(SingleBookView)
