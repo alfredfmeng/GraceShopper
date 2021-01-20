@@ -1,44 +1,57 @@
 import React from 'react'
-import SingleBook from './SingleBook'
+import SearchByTitle from './SearchByTitle'
+import NewUserForm from './NewUserForm'
 import {connect} from 'react-redux'
-import {fetchBooks} from '../store/books'
+import {newUser} from '../store/newUser'
+
+const defaultState = {
+  name: '',
+  email: '',
+  password: ''
+}
 
 class AllBooks extends React.Component {
-  componentDidMount() {
-    this.props.fetchBooks()
+  constructor() {
+    super()
+    this.state = defaultState
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  handleChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
+  handleSubmit(event) {
+    event.preventDefault()
+    this.props.history.push('/')
+    try {
+      this.props.createUser({...this.state})
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   render() {
     return (
       <div>
-        {this.props.books.map(book => {
-          return (
-            <SingleBook
-              key={book.id}
-              id={book.id}
-              title={book.title}
-              author={book.author}
-              description={book.description}
-              genre={book.genre}
-              image={book.image}
-            />
-          )
-        })}
+        <NewUserForm
+          {...this.state}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+        />
+        <SearchByTitle />
       </div>
     )
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    books: state.books
-  }
-}
-
 const mapDispatchToProps = dispatch => {
   return {
-    fetchBooks: () => dispatch(fetchBooks())
+    createUser: user => dispatch(newUser(user, history))
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AllBooks)
+export default connect(null, mapDispatchToProps)(AllBooks)

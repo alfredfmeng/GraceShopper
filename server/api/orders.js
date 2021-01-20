@@ -21,6 +21,7 @@ router.get('/:id', async (req, res, next) => {
   }
 })
 
+
 // DUMMY DATA, REPLACE WITH REAL LOCALSTORAGE + LOGIN
 const userID = 1
 
@@ -36,3 +37,4 @@ router.post('/', async (req, res, next) => {
     console.error(err)
   }
 })
+
