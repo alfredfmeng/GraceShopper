@@ -36,6 +36,7 @@ export class Cart extends React.Component {
           this.state.books.map(book => (
             <SingleBook
               key={book.id}
+              id={book.id}
               title={book.title}
               author={book.author}
               description={book.description}
