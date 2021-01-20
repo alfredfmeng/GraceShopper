@@ -28,3 +28,13 @@ form div {
 .bookInformation {
   width: 500px;
 }
+
+.checkout {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.total {
+  display: flex;
+  justify-content: center;
+}
