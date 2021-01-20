@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import SingleBook from './SingleBook'
+import {setCart} from '../store/cart'
+import {connect} from 'react-redux'
 
 export class Cart extends React.Component {
   constructor() {
@@ -49,3 +51,9 @@ export class Cart extends React.Component {
     )
   }
 }
+
+const mapDispatchToProps = dispatch => ({
+  setCart: () => dispatch(setCart(books))
+})
+
+export default connect(null, mapDispatchToProps)(Cart)
