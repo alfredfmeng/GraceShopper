@@ -117,7 +117,7 @@ select {
   background-color: rgb(0, 73, 73);
   border: 2px solid black;
   padding: 30px 45px 45px 30px;
-  display: flex;
+  /* display: flex; */
   width: 350px;
   border-radius: 8px;
   margin-bottom: 30px;
@@ -126,4 +126,17 @@ select {
 .bookImage {
   width: 350px;
   height: 550px;
+}
+
+.checkoutButton {
+  background-color: #979797; /* Red */
+  border: 1px solid black;
+  border-radius: 8px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 5px;
 }
