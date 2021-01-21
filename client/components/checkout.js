@@ -74,7 +74,11 @@ export class Checkout extends React.Component {
         </div>
         <div className="total">
           <h1>Total: ${Math.round((total + total * 0.0625) * 100) / 100}</h1>
-          <button type="button" onClick={this.handleClick}>
+          <button
+            className="checkoutButton"
+            type="button"
+            onClick={this.handleClick}
+          >
             Place Order
           </button>
         </div>
