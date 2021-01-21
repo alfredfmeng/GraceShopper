@@ -55,7 +55,11 @@ class SearchByTitle extends React.Component {
           <div>
             <div className="col">
               <span>Search Book</span>
-              <input label="Search Book" onChange={this.handleOnChange} />
+              <input
+                label="Search Book"
+                placeholder="Enter Book Title"
+                onChange={this.handleOnChange}
+              />
             </div>
             <SearchByGenre />
           </div>
@@ -63,7 +67,11 @@ class SearchByTitle extends React.Component {
           <div>
             <div className="col">
               <span>Search Book</span>
-              <input label="Search Book" onChange={this.handleOnChange} />
+              <input
+                label="Search Book"
+                placeholder="Enter Book Title"
+                onChange={this.handleOnChange}
+              />
             </div>
             <div className="row">
               {this.props.books
