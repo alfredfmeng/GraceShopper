@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
 import {AiFillHome} from 'react-icons/ai'
+import {BiLogIn, BiLogOut, BiCartAlt} from 'react-icons/bi'
 const Navbar = ({handleClick, isLoggedIn}) => (
   <div>
     <Link to="/" style={{color: '#000000'}}>
@@ -18,9 +19,14 @@ const Navbar = ({handleClick, isLoggedIn}) => (
             Home
           </Link>
           <Link className="navButton" to="/cart">
+            <BiCartAlt />
             Cart
           </Link>
+          <a className="userprofile" href="/userprofile">
+            User Profile
+          </a>
           <a className="navButton" href="#" onClick={handleClick}>
+            <BiLogOut />
             Logout
           </a>
         </div>
@@ -28,12 +34,14 @@ const Navbar = ({handleClick, isLoggedIn}) => (
         <div className="nav">
           {/* The navbar will show these links before you log in */}
           <Link className="navButton" to="/login">
+            <BiLogIn />
             Login
           </Link>
           <Link className="navButton" to="/signup">
             Sign Up
           </Link>
           <Link className="navButton" to="/cart">
+            <BiCartAlt />
             Cart
           </Link>
         </div>

@@ -128,9 +128,16 @@ select {
   height: 550px;
 }
 
+.userprofile {
+  color: white;
+  padding-left: 5px;
+  padding-right: 30px;
+  text-decoration: none;
+  border-right: 1px solid #bbb;
 
 .checkoutButton {
   background-color: #979797; /* Red */
+
 
 .changePriceButton {
   background-color: #4caf50; /* Green */
@@ -143,7 +150,7 @@ select {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-
   margin-right: 5px;
+
 
 }
