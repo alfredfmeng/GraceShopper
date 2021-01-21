@@ -128,8 +128,13 @@ select {
   height: 550px;
 }
 
+
 .checkoutButton {
   background-color: #979797; /* Red */
+
+.changePriceButton {
+  background-color: #4caf50; /* Green */
+
   border: 1px solid black;
   border-radius: 8px;
   color: white;
@@ -138,5 +143,7 @@ select {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+
   margin-right: 5px;
+
 }
