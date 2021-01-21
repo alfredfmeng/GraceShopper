@@ -38,6 +38,7 @@ class EditPrice extends React.Component {
     )
   }
 }
+
 const mapStateToProps = state => {
   return {
     book: state.book
