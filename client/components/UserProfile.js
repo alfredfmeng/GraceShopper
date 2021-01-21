@@ -8,15 +8,14 @@ class UserProfile extends React.Component {
   render() {
     return (
       <div className="profile">
-        <div>
-          <img src="https://icon-library.net/images/small-user-icon/small-user-icon-13.jpg" />
-          <h1>User's Name</h1>
-        </div>
+        <img
+          className="profileimage"
+          src="https://icon-library.net/images/small-user-icon/small-user-icon-13.jpg"
+        />
+        <h1>Juan</h1>
         <ul>
-          <li>Joined 'Today's Date'</li>
-          <li>Username: username goes here</li>
-          <li>Email: email goes here</li>
-          <li>Address: address goes here</li>
+          <li>Joined: Janurary 21st 2020</li>
+          <li>Email: juan@email.com</li>
         </ul>
         <div>Order History</div>
       </div>
