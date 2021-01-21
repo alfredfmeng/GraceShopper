@@ -117,7 +117,7 @@ select {
   background-color: rgb(0, 73, 73);
   border: 2px solid black;
   padding: 30px 45px 45px 30px;
-  display: flex;
+  /* display: flex; */
   width: 350px;
   border-radius: 8px;
   margin-bottom: 30px;
@@ -128,7 +128,6 @@ select {
   height: 550px;
 }
 
-
 .userprofile {
   color: white;
   padding-left: 5px;
@@ -136,8 +135,13 @@ select {
   text-decoration: none;
   border-right: 1px solid #bbb;
 
+.checkoutButton {
+  background-color: #979797; /* Red */
+
+
 .changePriceButton {
   background-color: #4caf50; /* Green */
+
   border: 1px solid black;
   border-radius: 8px;
   color: white;
@@ -146,5 +150,7 @@ select {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  margin-right: 5px;
+
 
 }

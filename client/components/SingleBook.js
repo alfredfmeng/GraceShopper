@@ -44,7 +44,6 @@ class SingleBook extends React.Component {
             <h1>{this.props.title}</h1>
             <h2>{this.props.author}</h2>
             <h2>${this.props.price}</h2>
-            <button type="button">Add To Cart</button>
           </div>
         )}
       </div>
