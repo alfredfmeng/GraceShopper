@@ -41,6 +41,7 @@ class SearchByTitle extends React.Component {
           description={book.description}
           genre={book.genre}
           image={book.image}
+          price={book.price}
         />
       </div>
     )
