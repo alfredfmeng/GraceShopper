@@ -61,16 +61,22 @@ class SearchByGenre extends React.Component {
           {books.map(book => {
             return (
               <div className="singleBook" key={book.id}>
-                <SingleBook
-                  key={book.id}
-                  id={book.id}
-                  title={book.title}
-                  author={book.author}
-                  description={book.description}
-                  genre={book.genre}
-                  image={book.image}
-                  price={book.price}
-                />
+                <div>
+                  <SingleBook
+                    key={book.id}
+                    id={book.id}
+                    title={book.title}
+                    author={book.author}
+                    description={book.description}
+                    genre={book.genre}
+                    image={book.image}
+                    price={book.price}
+                  />
+                </div>
+
+                <button className="checkoutButton" type="button">
+                  Add To Cart
+                </button>
               </div>
             )
           })}
