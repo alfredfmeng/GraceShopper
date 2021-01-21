@@ -85,7 +85,15 @@ class SingleBookView extends React.Component {
                 Quantity:
                 <input type="number" id="quantity" min="1" defaultValue="1" />
               </label>
-              <input type="submit" value="Add to cart" />
+              <a href="/checkout">
+                <input
+                  type="submit"
+                  value="Add to cart"
+                  onClick={() => {
+                    alert('Added to cart!')
+                  }}
+                />
+              </a>
             </form>
           </div>
         )}

@@ -128,10 +128,23 @@ select {
   height: 550px;
 }
 
+
 .userprofile {
   color: white;
   padding-left: 5px;
   padding-right: 30px;
   text-decoration: none;
   border-right: 1px solid #bbb;
+
+.changePriceButton {
+  background-color: #4caf50; /* Green */
+  border: 1px solid black;
+  border-radius: 8px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
 }

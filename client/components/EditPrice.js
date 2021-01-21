@@ -41,7 +41,9 @@ class EditPrice extends React.Component {
           onChange={this.handleChange}
           value={price}
         />
-        <button type="submit">Change Price</button>
+        <button className="changePriceButton" type="submit">
+          Change Price
+        </button>
       </form>
     )
   }

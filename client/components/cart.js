@@ -45,6 +45,7 @@ export class Cart extends React.Component {
                 description={book.description}
                 genre={book.genre}
                 image={book.image}
+                price={book.price}
               />
             ))
           )}
