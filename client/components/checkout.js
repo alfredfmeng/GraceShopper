@@ -24,6 +24,12 @@ export class Checkout extends React.Component {
     }
   }
 
+  handleClick = () => {
+    localStorage.clear()
+    alert('Order has been placed!')
+    this.props.history.push('/home')
+  }
+
   render() {
     console.log('STATE', this.state)
     let total = 0
@@ -47,7 +53,7 @@ export class Checkout extends React.Component {
             <h4>Zip Code</h4>
             <input />
             <div>
-              <button>Save Address</button>
+              <button type="button">Save Address</button>
             </div>
           </div>
 
@@ -68,7 +74,9 @@ export class Checkout extends React.Component {
         </div>
         <div className="total">
           <h1>Total: ${Math.round((total + total * 0.0625) * 100) / 100}</h1>
-          <button>Place Order</button>
+          <button type="button" onClick={this.handleClick}>
+            Place Order
+          </button>
         </div>
       </>
     )

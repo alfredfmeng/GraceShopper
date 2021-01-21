@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import SingleBook from './SingleBook'
 import {setCart} from '../store/cart'
-import {connect} from 'react-redux'
+import {connect, Link} from 'react-redux'
 
 export class Cart extends React.Component {
   constructor() {
@@ -31,22 +31,29 @@ export class Cart extends React.Component {
     // refactor to render table as opposed to divs later
     return (
       <div>
-        <h1>Your Cart</h1>
-        {this.state.books.length === 0 ? (
-          <h2>Your cart is empty!</h2>
-        ) : (
-          this.state.books.map(book => (
-            <SingleBook
-              key={book.id}
-              id={book.id}
-              title={book.title}
-              author={book.author}
-              description={book.description}
-              genre={book.genre}
-              image={book.image}
-            />
-          ))
-        )}
+        <div>
+          <h1>Your Cart</h1>
+          {this.state.books.length === 0 ? (
+            <h2>Your cart is empty!</h2>
+          ) : (
+            this.state.books.map(book => (
+              <SingleBook
+                key={book.id}
+                id={book.id}
+                title={book.title}
+                author={book.author}
+                description={book.description}
+                genre={book.genre}
+                image={book.image}
+              />
+            ))
+          )}
+        </div>
+        <div>
+          <a href="/checkout">
+            <button type="button">Go To Checkout</button>
+          </a>
+        </div>
       </div>
     )
   }

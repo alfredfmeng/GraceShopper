@@ -4,7 +4,7 @@ module.exports = router
 
 const isAdminMiddleware = (req, res, next) => {
   const currentUser = req.user
-  if (currentUser && currentUser.isAdmin) {
+  if (currentUser && currentUser.admin) {
     next()
   } else {
     const error = new Error('Nope')

@@ -3,15 +3,18 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
-
+import {AiFillHome} from 'react-icons/ai'
 const Navbar = ({handleClick, isLoggedIn}) => (
   <div>
-    <h1>Website Name</h1>
+    <Link to="/" style={{color: '#000000'}}>
+      <h1>Fullstack's Bookstacks</h1>
+    </Link>
     <nav>
       {isLoggedIn ? (
         <div className="nav">
           {/* The navbar will show these links after you log in */}
           <Link className="navButton" to="/home">
+            <AiFillHome />
             Home
           </Link>
           <Link className="navButton" to="/cart">

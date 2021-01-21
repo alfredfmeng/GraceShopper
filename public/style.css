@@ -77,3 +77,53 @@ input {
 select {
   font-size: 16px;
 }
+
+.adminDeleteButtons {
+  background-color: #f44336; /* Red */
+  border: 1px solid black;
+  border-radius: 8px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.adminEditButtons {
+  background-color: #4caf50; /* Green */
+  border: 1px solid black;
+  border-radius: 8px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.allBooks {
+  background-color: rgb(189, 189, 189);
+  border: 2px solid black;
+  padding: 30px 45px 45px 30px;
+  display: flex;
+  justify-content: space-around;
+  width: auto;
+  flex-wrap: wrap;
+}
+
+.singleBook {
+  background-color: rgb(0, 73, 73);
+  border: 2px solid black;
+  padding: 30px 45px 45px 30px;
+  display: flex;
+  width: 350px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.bookImage {
+  width: 350px;
+  height: 550px;
+}
