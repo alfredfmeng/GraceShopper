@@ -35,9 +35,6 @@ class SingleBook extends React.Component {
             >
               Delete
             </button>
-            <button className="adminEditButtons" type="button">
-              Edit Price
-            </button>
           </div>
         ) : (
           <div>

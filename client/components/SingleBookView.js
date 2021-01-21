@@ -40,15 +40,6 @@ class SingleBookView extends React.Component {
                 <div>
                   <EditPrice id={book.id} />
                 </div>
-                <button
-                  className="adminDeleteButtons"
-                  type="button"
-                  onClick={() => {
-                    this.handleRemoveBook(this.props.id)
-                  }}
-                >
-                  Delete
-                </button>
               </div>
             </div>
           </div>

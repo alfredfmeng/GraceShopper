@@ -10,6 +10,7 @@ import {Cart} from './components/cart'
 import Admin from './components/admin'
 import NewUserForm from './components/NewUserForm'
 import {Checkout} from './components/checkout'
+import UserProfile from './components/UserProfile'
 
 /**
  * COMPONENT
@@ -37,6 +38,7 @@ class Routes extends Component {
             <Switch>
               {/* Routes placed here are only available after logging in */}
               <Route path="/home" component={UserHome} />
+              <Route path="/userprofile" component={UserProfile} />
             </Switch>
           )}
 

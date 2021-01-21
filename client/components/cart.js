@@ -60,7 +60,7 @@ export class Cart extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  setCart: () => dispatch(setCart(books))
+  setCart: books => dispatch(setCart(books))
 })
 
 export default connect(null, mapDispatchToProps)(Cart)
