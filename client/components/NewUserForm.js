@@ -65,7 +65,9 @@ class NewUserForm extends React.Component {
             value={this.state.password}
           />
 
-          <button type="submit">Submit</button>
+          <button className="logSubButton" type="submit">
+            Submit
+          </button>
         </form>
         <hr />
         <a href="/auth/google">Sign Up with Google</a>
