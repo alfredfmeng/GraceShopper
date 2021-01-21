@@ -20,12 +20,14 @@ class SingleBook extends React.Component {
         {isAdmin ? (
           <div>
             <Link to={`/books/${this.props.id}`}>
-              <img src={this.props.image} />
+              <img className="bookImage" src={this.props.image} />
             </Link>
             <h1>{this.props.title}</h1>
             <h2>{this.props.author}</h2>
-            <h2>{this.props.price}</h2>
+            <h2>${this.props.price}</h2>
+
             <button
+              className="adminDeleteButtons"
               type="button"
               onClick={() => {
                 this.handleRemoveBook(this.props.id)
@@ -33,16 +35,18 @@ class SingleBook extends React.Component {
             >
               Delete
             </button>
-            <button type="button">Edit Price</button>
+            <button className="adminEditButtons" type="button">
+              Edit Price
+            </button>
           </div>
         ) : (
           <div>
             <Link to={`/books/${this.props.id}`}>
-              <img src={this.props.image} />
+              <img className="bookImage" src={this.props.image} />
             </Link>
             <h1>{this.props.title}</h1>
             <h2>{this.props.author}</h2>
-            <h2>{this.props.price}</h2>
+            <h2>${this.props.price}</h2>
             <button type="button">Add To Cart</button>
           </div>
         )}

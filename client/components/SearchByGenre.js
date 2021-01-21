@@ -57,18 +57,21 @@ class SearchByGenre extends React.Component {
             <option>Biographies</option>
           </select>
         </div>
-        <div>
+        <div className="allBooks">
           {books.map(book => {
             return (
-              <SingleBook
-                key={book.id}
-                id={book.id}
-                title={book.title}
-                author={book.author}
-                description={book.description}
-                genre={book.genre}
-                image={book.image}
-              />
+              <div className="singleBook" key={book.id}>
+                <SingleBook
+                  key={book.id}
+                  id={book.id}
+                  title={book.title}
+                  author={book.author}
+                  description={book.description}
+                  genre={book.genre}
+                  image={book.image}
+                  price={book.price}
+                />
+              </div>
             )
           })}
         </div>

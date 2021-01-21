@@ -6,7 +6,7 @@ class EditPrice extends React.Component {
   constructor() {
     super()
     this.state = {
-      price: 0
+      price: ''
     }
   }
 
@@ -24,7 +24,9 @@ class EditPrice extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.updateBookPrice(this.props.book, {...this.state})
+    const book = this.props.book
+    book.price = this.state.price
+    this.props.updateBookPrice(book)
   }
 
   render() {
@@ -32,7 +34,13 @@ class EditPrice extends React.Component {
     console.log('this.props', this.props)
     return (
       <form id="edit-price" onSubmit={this.handleSubmit}>
-        <input name="price" onChange={this.handleChange} value={price} />
+        <input
+          type="text"
+          placeholder="Enter Amount"
+          name="price"
+          onChange={this.handleChange}
+          value={price}
+        />
         <button type="submit">Change Price</button>
       </form>
     )
@@ -47,7 +55,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    updatePrice: book => dispatch(updateBookPrice(book))
+    updateBookPrice: book => dispatch(updateBookPrice(book))
   }
 }
 
