@@ -134,10 +134,19 @@ select {
   padding-right: 30px;
   text-decoration: none;
   border-right: 1px solid #bbb;
+}
 
 .checkoutButton {
-  background-color: #979797; /* Red */
-
+  background-color: #999999; /* Green */
+  border: 1px solid black;
+  border-radius: 8px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
 
 .changePriceButton {
   background-color: #4caf50; /* Green */
@@ -151,6 +160,4 @@ select {
   display: inline-block;
   font-size: 16px;
   margin-right: 5px;
-
-
 }

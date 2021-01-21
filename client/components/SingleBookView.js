@@ -87,6 +87,7 @@ class SingleBookView extends React.Component {
               </label>
               <a href="/checkout">
                 <input
+                  className="checkoutButton"
                   type="submit"
                   value="Add to cart"
                   onClick={() => {
