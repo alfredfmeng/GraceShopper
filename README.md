@@ -1,6 +1,6 @@
 # FULLSTACK'S BOOKSTACKS
 
-_e-commerce website for book nerds_ (This will make the font italic )
+_e-commerce website for book nerds_ 
 
 ## Setup (Tell your user how to set up the project if they are to clone it)
 
